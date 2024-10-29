@@ -435,3 +435,126 @@ But although these are all real advantages of writing simply, none of them are w
 There are of course times when you want to use a complicated sentence or fancy word for effect. But you should never do it by accident.
 
 The other reason my writing ends up being simple is the way I do it. I write the first draft fast, then spend days editing it, trying to get everything just right. Much of this editing is cutting, and that makes simple writing even simpler.
+
+
+mlit run Q1_retraining.py
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://10.7.55.179:8501
+
+2024-10-29 20:29:31.832 Uncaught app exception
+Traceback (most recent call last):
+  File "C:\Users\ramin\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\scriptrunner\exec_code.py", line 88, in exec_func_with_error_handling
+    result = func()
+             ^^^^^^
+  File "C:\Users\ramin\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 579, in code_to_exec
+    exec(code, module.__dict__)
+  File "C:\Users\ramin\Desktop\Assignment 3\ML_Assignment_3\Q1_retraining.py", line 120, in <module>
+    elif st.sidebar.button("Generate Text"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ramin\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\metrics_util.py", line 410, in wrapped_func
+    result = non_optional_func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ramin\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\elements\widgets\button.py", line 222, in button
+    return self.dg._button(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\ramin\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\elements\widgets\button.py", line 872, in _button
+    element_id = compute_and_register_element_id(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ramin\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\elements\lib\utils.py", line 226, in compute_and_register_element_id
+    _register_element_id(ctx, element_type, element_id)
+  File "C:\Users\ramin\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\elements\lib\utils.py", line 132, in _register_element_id     
+    raise StreamlitDuplicateElementId(element_type)
+streamlit.errors.StreamlitDuplicateElementId: There are multiple `button` elements with the same auto-generated ID. When this element is created, it is assigned an internal ID based on the element type and provided parameters. Multiple elements with the same type and parameters will cause this error.     
+
+To fix this error, please pass a unique `key` argument to the `button` element.
+  Stopping...
+
+ramin@DESKTOP-FV74IV2 MINGW64 ~/Desktop/Assignment 3/ML_Assignment_3 (main)
+$ streamlit run Q1_retraining.py
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://10.7.55.179:8501
+
+2024-10-29 20:30:33.369 Uncaught app exception
+Traceback (most recent call last):
+  File "C:\Users\ramin\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\scriptrunner\exec_code.py", line 88, in exec_func_with_error_handling
+    result = func()
+             ^^^^^^
+  File "C:\Users\ramin\AppData\Local\Programs\Python\Python312\Lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 579, in code_to_exec
+    exec(code, module.__dict__)
+  File "C:\Users\ramin\Desktop\Assignment 3\ML_Assignment_3\Q1_retraining.py", line 113, in <module>
+    generated_text = generate_text(model, itos, stoi, block_size, input_sentence, max_len=100)
+                                   ^^^^^
+NameError: name 'model' is not defined
+  Stopping...
+
+ramin@DESKTOP-FV74IV2 MINGW64 ~/Desktop/Assignment 3/ML_Assignment_3 (main)
+$ streamlit run Q1_retraining.py
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://10.7.55.179:8501
+
+cpu
+march 2024this is a talk ---> i
+2024this is a talk i ---> gave
+is a talk i gave ---> to
+a talk i gave to ---> 14
+talk i gave to 14 ---> and
+i gave to 14 and ---> 15
+gave to 14 and 15 ---> year
+to 14 and 15 year ---> olds
+14 and 15 year olds ---> about
+and 15 year olds about ---> what
+15 year olds about what ---> to
+year olds about what to ---> do
+olds about what to do ---> now
+about what to do now ---> if
+what to do now if ---> they
+to do now if they ---> might
+do now if they might ---> want
+now if they might want ---> to
+if they might want to ---> start
+they might want to start ---> a
+Dataset generated with 13803 samples
+X tensor shape: torch.Size([13803, 5])
+y tensor shape: torch.Size([13803])
+march 2024this is a talk ---> i
+2024this is a talk i ---> gave
+is a talk i gave ---> to
+a talk i gave to ---> 14
+talk i gave to 14 ---> and
+i gave to 14 and ---> 15
+gave to 14 and 15 ---> year
+to 14 and 15 year ---> olds
+14 and 15 year olds ---> about
+and 15 year olds about ---> what
+Dataset generated with 13803 samples
+Epoch: 50, Loss: 0.005375207867473364
+Epoch: 100, Loss: 0.005119240377098322
+Epoch: 150, Loss: 0.005099277477711439
+Epoch: 200, Loss: 0.005096438806504011
+Epoch: 250, Loss: 0.005096090491861105
+Epoch: 300, Loss: 0.0050961729139089584
+Epoch: 350, Loss: 0.005096175242215395
+Epoch: 400, Loss: 0.005096175707876682
+Epoch: 450, Loss: 0.005096175707876682
+Epoch: 500, Loss: 0.005096175707876682
+Model saved as model_emb64_ctx5_actReLU.pth
+march 2024this is a talk ---> i
+2024this is a talk i ---> gave
+is a talk i gave ---> to
+a talk i gave to ---> 14
+talk i gave to 14 ---> and
+i gave to 14 and ---> 15
+gave to 14 and 15 ---> year
+to 14 and 15 year ---> olds
+14 and 15 year olds ---> about
+and 15 year olds about ---> what
+Dataset generated with 13803 samples
